@@ -7,7 +7,7 @@ namespace Encuesta.Pages;
 public class EncuestaModel : PageModel
 {
     [BindProperty]
-    public Encuesta.Models.Encuesta encuesta { get; set; } = new Encuesta.Models.Encuesta();
+    public Encuesta.Models.Encuesta Encuesta { get; set; } = new Encuesta.Models.Encuesta();
 
     private readonly ServicioEncuestas _servicioEncuestas;
 
@@ -18,7 +18,7 @@ public class EncuestaModel : PageModel
 
     public IActionResult OnPost()
     {
-        _servicioEncuestas.Agregar(encuesta);
+        _servicioEncuestas.Agregar(Encuesta);
         return RedirectToPage("Gracias");
     }
 }
