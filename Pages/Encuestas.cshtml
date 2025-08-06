@@ -2,3 +2,41 @@
 @model Encuesta.Pages.EncuestaModel
 @{
 }
+
+<form asp-page="Encuesta">
+    <div class="text-center">
+        <img src="/Images/jinx2.jpg" alt="Encuesta" class="img-fluid" width="300" height="300" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Encuesta.Nombre"></label>
+        <input class="form-control" asp-for="Encuesta.Nombre" />
+    </div>
+    <div class="form-group">
+        ¿Quieres realizar horas extra?<br />
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="respuestaSi"
+                value="true"
+                asp-for="Encuesta.HorasExtra">
+            <label class="form-check-label" for="respuestaSi">Sí</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="respuestaNo"
+                value="false"
+                asp-for="Encuesta.HorasExtra">
+            <label class="form-check-label" for="respuestaNo">No</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Encuesta.Comentarios"></label>
+        <textarea class="form-control" asp-for="Encuesta.Comentarios"></textarea>
+    </div>
+
+    <div class="text-center">
+        <input type="submit" value="Enviar" class="btn btn-primary" />
+    </div>
+
+</form>
