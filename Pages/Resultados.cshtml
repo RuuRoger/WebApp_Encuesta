@@ -2,3 +2,31 @@
 @model Encuesta.Pages.ResultadosModel
 @{
 }
+
+<h1>Resultados de la encuesta</h1>
+<div class="row">
+    <div class="=" col text-center">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>¿Quieres realizar horas extra?</th>
+                    <th>Comentarios</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var encuesta in Model.Encuestas)
+                {
+                    <tr>
+                        <td>@encuesta.Nombre</td>
+                        <td>@(encuesta.HorasExtra ? "Sí" : "No")</td>
+                        <td>@encuesta.Comentarios</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary" asp-page="Index">Volver atrás</a>
+    </div>
+</div>
