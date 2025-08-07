@@ -4,7 +4,7 @@ Sample project with ASP.NET Core Razor Pages to manage surveys.
 
 ## Project Structure
 
-![UML Diagram](UML-Project.png)
+![UML Diagram](UML/UML-Project.png)
 
 ## Demo
 
