@@ -1,0 +1,40 @@
+@startuml
+
+class Encuesta {
+    + Nombre: string
+    + Comentarios: string
+    + HorasExtra: bool
+}
+
+class ServicioEncuestas {
+    + Encuestas: List<Encuesta>
+    + Agregar(encuesta: Encuesta): void
+}
+
+class IndexModel {
+    - _logger: ILogger<IndexModel>
+    + IndexModel(logger: ILogger<IndexModel>)
+}
+
+class EncuestaModel {
+    - _servicioEncuestas: ServicioEncuestas
+    + Encuesta: Encuesta
+    + EncuestaModel(servicioEncuestas: ServicioEncuestas)
+    + OnPost(): IActionResult
+}
+
+class GraciasModel {
+    + GraciasModel()
+}
+
+class ResultadosModel {
+    - _servicioEncuestas: ServicioEncuestas
+    + Encuestas: List<Encuesta>
+    + ResultadosModel(servicioEncuestas: ServicioEncuestas)
+}
+
+ServicioEncuestas "1" *-- "many" Encuesta
+EncuestaModel ..> ServicioEncuestas : <<inject>>
+ResultadosModel ..> ServicioEncuestas : <<inject>>
+
+@enduml
