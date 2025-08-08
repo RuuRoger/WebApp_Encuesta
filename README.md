@@ -16,7 +16,7 @@ Here you can see how to access the survey. In particular, 3 fields are requested
 
 - ASP.NET Core 9.0 (Razor Pages)
 - C#
-- HTML5 and CSS3
-- Bootstrap
+- HTML5
+- CSS3 (Bootstrap)
 - PlantUML
 - VS Code
